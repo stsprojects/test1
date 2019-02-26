@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+    <!-- 
+WELCOME USER! You've reached the source code for a manual created by STS. If you plan on updating or editing this manual, then you're in the right place!
+
+Before editing this manual, please read through the manual editing guide at https://sts.doit.wisc.edu/manuals/manual-editing-guide/ and follow its recommendations. It is important that we adhere to the conventions set in the guide in order to maintain quality and consistency across all manuals.
+
+A few things to note:
+
+* In order to have a working preview with accurate CSS and functional JavaScript, you will need a copy of the /master-files folder in the same parent directory as the folder with your manual editing files in it, e.g. if you have a folder on your desktop "STS Manuals", and you're editing the Excel 1 manual in the "excel1" folder and the Photoshop 1 folder in the "photoshop1" folder, you will need to have the "master-files" folder in "STS Manuals" as well, since the manual files link to the CSS/Javascript using relative links. Your folder will look like this: 
+
+├STS Manuals 
+├╴╴excel1
+├╴╴╴╴╴images
+├╴╴╴╴╴class_files
+├╴╴master-files
+├╴╴photoshop1
+├╴╴╴╴╴images
+├╴╴╴╴╴class_files
+
+
+* Manuals should be arranged into Topics, which are enclosed in the <section class="topic"> tag, and followed immediately by an <h1> tag with the topic name in it, e.g.
+
+<section class="topic">
+<h1>Topic name</h1>
+<p>Neat and helpful information goes here</p>
+</section>
+
+The <section class="topic"> and following <h1> element are how the manual's JavaScript automagically builds the Topics outline and creates the links, so if they are not there, the manual will be without a table of contents and its friends will probably make fun of it (which is decidedly not cool).
+
+* Unless you are changing the contents of the <title></title> tag, you should not have to touch the <head> portion of this document (unless instructed to do so). This tag connects the HTML to the CSS and JavaScript that keep the manual functioning. Look for the comment tag that says "MAIN CONTENT", and you may edit there.
+
+
+Good luck, and have fun!
+
+-->
+    <head>
+
+        <!-- Manual title -->
+        <title>Python</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Software manual provided by Software Training for Students at the University of Wisconsin.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' id='uwmadison-fonts-css'  href='https://brand.wisc.edu/content/themes/uw-theme/dist/fonts/uw160/fonts.css?ver=1.1.1' type='text/css' media='all' /><link rel="stylesheet" type="text/css" href="../master-files/css/stylesheet.css">
+        <script src="../master-files/highlight.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="../master-files/smooth-scroll.js"></script>
+        <script src="../master-files/primary-functions.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4370707-17"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4370707-17');
+        </script>        
+
+
+    </head>
+    <body>
+        <!-- begin front page -->
+        <div class="manual-front-page">
+            <div id="coverpage-title">
+                <h1>Python</h1>
+                <h2>Introduction to Programming with Python</h2>
+            </div>
+            <div id="about-page"></div>
+            <div id="outline"></div>
+        </div>
+        <!-- BEGIN MAIN CONTENT -->
+        <section class="topic">
+            <h1>Introduction</h1>
+            <img src="images/test1.png" alt="test image">
+            <img src="images/test2.png" alt="Test image 2">
+            <p>Welcome to Python! This course has been designed to provide an introduction to the Python programming language and give you basic knowledge of its syntax and conventions. </p>
+            <p>Python is a dynamic programming language that is used in a variety of application domains. Python is based on object-oriented programming, similar to the likes of C++, Java, C#, Perl, Ruby, etc. This manual will include explanatory text along with code examples that you should be typing to follow along. All code is placed within snippets applicable to the language being used.</p>
+            <p>Python can be used in a wide variety of ways, and it has a vast ecosystem of libraries and tools for doing specialized kinds of programming - things like machine learning, statistics, language processing, and more. This class only scratches the surface of what Python can do, but it aims to give enough knowledge of the basics to explore more on your own.</p>
+            <h2>Python 3 vs. Python 2</h2>
+            <p>Python is somewhat unusual among programming languages in that two different versions of the language are currently in wide use at the same time, despite the newer version not being backward-compatible with the earlier version.</p>
+            <p>This manual is based on Python 3 (version 3.5 to be precise), which differs from the previous version Python 2.7 in certain fundamental ways. The most visible of these is the <span class="type">print</span> function, which did not need parentheses in version 2 but requires them in version 3. </p>
+            <p><a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html" target="_blank">This article</a> explains some of the major differences between versions 2 and 3 and offers some advice regarding which version to choose if you are just starting out.</p>
+            <p> The code snippets and exercises in this class are written in Python 3 and may not work correctly (or in some cases, work at all) on Python 2. Python 2.7 has not been updated since 2010, but it still has a large install base and many libraries are written for Python 2. Python 2.7 comes pre-installed on some computers, most notably those running MacOS. </p>
+            <p> Python 3 is the present and future of the language and is generally a better starting point for beginners, but if you will be working with a code base that uses Python 2, it will be helpful for you to have an understanding of the differences between the versions.</p>
+            <h2>Running Python</h2>
+            <p>Note that for the exercises in this lesson we will be using Repl.it interactive windows within this webpage.  Outside of this lesson, you will be able to do everything we talked about within the terminal by following these instructions.  If not already installed, Python can be downloaded from the following website: <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. After a straightforward installation process, find and run the <strong>IDLE (Python 3.5)</strong> application. This should open up the Python interpreter shell which allows the user to enter code line by line for testing or trial and error. The interpreter provides many options including being able to open a new script window where complete Python programs can be written in a built in Integrated Development Environment (IDE).</p>
+            <div class="centered-image-large border"> <img src="images/idle.png" alt="Screenshot of the Python command prompt"> </div>
+            <p>Macs have Python built-in and can be found via the Terminal. Search for and open the Terminal via the applications menu or Spotlight search. In the terminal, type in <span class="type-text">python</span>. Note that this will be version 2.7. It is recommended that you use version 3.4 and above for this course. <span class="highlight">Please note that, on the DoIT computers, only the Windows partition has Python 3 installed.</span></p>
+            <div class="centered-image-large border"> <img src="images/terminal.png" alt="Screenshot of the MacOS Terminal window running Python"> </div>
+            <h2>Getting help</h2>
+            <p>Python has a very detailed help menu that can be entered through the Python interpreter. Once you have the Python Interpreter opened, type in the following:</p> <pre><code>#helpMenu
+&gt;&gt;&gt; help()</code></pre>
+            <div class="centered-image-large border"> <img src="images/help.png" alt="Screenshot of the Python help tool"> </div>
+            <p>This will enter you into the Python help utility. You can enter any module, keyword or topic into this utility to get more information. For example, to get more information about strings you would type <span class="type-text">str</span> inside of the help module. This will bring up the help menu for strings specifically. To return to the interpreter, use <span class="type-text">quit</span>.</p> <pre><code>#helpMenuModule
+&gt;&gt;&gt; help()
+help&gt; str	#help on strings...
+
+help&gt; quit	#quit help menu</code></pre>
+            <p>Another approach to get help on certain modules in Python without the help menu is to insert the module names as an argument when in the interpreter. We do not need to quit from this as it is displayed in the interpreter.</p> <pre><code>&gt;&gt;&gt; help(str)	#help on strings...</code></pre>
+            <p>If the built-in resources do not suffice, additional help can be found over at Lynda.com in the form of video tutorials. The Python website also offers support over at <a href="https://www.python.org/about/help/">https://www.python.org/about/help/</a></p>
+        </section>
+        <section class="topic">
+            <h1>Variables and Simple Data Types</h1>
+            <h2>Introduction and Printing</h2>
+            <p>As in other programming languages, variables are symbols or names that stand for a specific value. Variables can be many different types in Python: numbers, strings, lists, tuples and dictionaries.</p>
+            <p>Variables follow this structure: <span class="type">variableName = <em>value</em></span>. Unlike programming languages like JavaScript and PHP, you do not need a keyword like <em>var</em>, <em>const</em> or <em>let</em> to initialize a variable; simply using the variable name, the <em>assignment operator</em> (aka the = sign) and a value will create a variable. And unlike more strongly typed languages like Java, you do not need to tell Python the type of the variable you are creating.</p>
+            <p>There are some naming conventions that need to be followed when naming a Python variable. Variable names cannot begin with a number or contain punctuation characters such as @, $, and %, with the exception of the underscore character. Python keywords cannot be used as variable names either. A list of such keywords is provided in the code snippet below.</p> <pre><code>#some incorrect variable syntax
+&gt;&gt;&gt; 313ph4nt = 349	        #variable name begins with number
+&gt;&gt;&gt; s.t.s = 420	                #contains special characters except underscore
+&gt;&gt;&gt; if = 'Weaponizing Didgeridoos by 2024'	#"if" is Python keyword
+
+#a list of some keywords that cannot be used as variable names
+    	and       del       from      not       while    
+	as        elif      global    or        with     
+	assert    else      pass      yield    	is
+	break     except    import    print     exec         
+	in        raise     try       continue  finally
+    	return	  for	    lambda    class	def</code></pre>
+            <p>Python is a case sensitive language, so two variables named Buckybadger and buckybadger would be considered different variables. Most programmers follow the <strong>camelCase</strong> naming convention where the first letter of each word in the name is capitalized except for the first word. Variables may contain numbers but must start with either a letter or an underscore. Below is an example that explains the case sensitivity of Python.</p> <pre><code>#caseSensitivity
+&gt;&gt;&gt; buckyBadger = 5
+&gt;&gt;&gt; buckybadger = 10
+&gt;&gt;&gt; buckybadger + buckyBadger
+15</code></pre>
+            <p>Below is an example on variables and how to print them to the terminal to start us off.</p>
+            <iframe height="800px" width="100%" src="https://repl.it/@akrichards/Variables-and-Print-Intro?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+            <h2>Changing Variable Values</h2>
+            <p>Variables do not have to keep the value that they begin with.  They can be "reassigned" using '=', in the same way that we declared them in the previous example.  Use the activity below to get an idea about how variable reassignment works.</p> 
+            <iframe height="800px" width="100%" src="https://repl.it/@akrichards/Changing-Variables?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+            <h2>Mathematical Operators</h2>
+            <p>Working with numbers and basic math functions is very similar to other programming languages. Python also has a built-in math library which makes calling math functions very efficient. Before we dive into working with numbers in Python, we should define the different numeric types available: </p>
+            <ul>
+                <li>
+                    <p><strong>int</strong>: Plain integers are whole numbers with precision limited up to 32 bits (meaning approximately 4.2 billion values are available).</p>
+                </li>
+                <li>
+                    <p><strong>long</strong>: Long integers are whole numbers with unlimited precision.</p>
+                </li>
+                <li>
+                    <p><strong>float</strong>: Floating point numbers contain decimal places with precision dependent on the system.</p>
+                </li>
+                <li>
+                    <p><strong>complex</strong>: Complex numbers have both a real and imaginary part.</p>
+                </li>
+            </ul>
+            <p>Mathematical operators in python are used to add, subtract, multiply, divide, and get the remainders of numerical values.  To use them, write them out as you would an equation in math.</p>
+            <code>
+            Ex.  
+            <br>sum = x + y
+            <br>difference = x - y
+            <br>quotient = x/y
+            <br>product = x*y  
+            </code>
+            <p>If you would like to use the solution elsewhere in your code, you will have to assign the value to a variable or return it in a function.  Below is an example demonstrating how this is done.</p>
+            <iframe height="800px" width="100%" src="https://repl.it/@akrichards/Mathematical-Operators?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+            <h2>Strings and Concatenation</h2>
+            <!--
+<p>Strings are defined in Python by using pairs of single quotes 'text' or double quotes"text”. Multi-line string statements are defined using pairs of 3 quotes, single or double: </p>
+<pre><code>
+#multiLine
+>>> """hey there
+i'm good"""
+</code></pre>
+-->
+
+            <p>Strings are sequences of characters and can be represented by a variable.  These can contain numbers, but they would still be treated as characters rather than as numerical values.</p>
+            <p>Strings are created by placing text in between <span class="highlight">either single or double quotes</span>. We will now use the <span class="type-text">print</span> keyword to display text. Try out the snippets below.</p> <pre><code>#displayText
+&gt;&gt;&gt; print("Hello World!")
+Hello World!</code></pre>
+            <p>Congratulations! You have displayed your first string in Python. Strings in Python are easily combined and these combinations can be modified using the comma (<span class="type-text">,</span>) and plus (<span class="type-text">+</span>) operators. Type the following in the Python interpreter and press return after each: </p><pre><code>#stringCombine
+&gt;&gt;&gt; print("Hello","World!")
+Hello World!
+&gt;&gt;&gt; print("Hello"+"World!")
+HelloWorld!</code></pre>
+            <p>The comma operator will put a space between the strings and the plus operator will not include a space when the strings are combined. Text can also be assigned to variables which makes manipulation of the string easier.</p> <pre><code>#stringVariable
+&gt;&gt;&gt; s = "Hello World!"	#assign text to variable named s
+&gt;&gt;&gt; print(s)	        #display variable s
+Hello World!</code></pre>
+            <h3>String Methods</h3>
+            <p>Python has a series of built-in methods that allow users to return manipulated string values. There are many more methods built into Python that are used on other data types. A method is considered a subroutine or a procedure that is associated with a given type and performs its function when called. In many other languages these are referred to as member functions or simply functions.</p>
+            <p>You have already defined the string <strong>s</strong> which we will be applying the string methods to. Perform the snippets below.</p> <pre><code>#stringMethods1
+&gt;&gt;&gt; print(s.capitalize())
+Hello world!
+&gt;&gt;&gt; print(s.upper())
+HELLO WORLD!
+&gt;&gt;&gt; print(s)
+Hello World!</code></pre>
+            <p>Since the string <strong>s</strong> is immutable, that means the string methods are not making changes to <strong>s</strong>. They are simply returning modified values of the string. Let's say that we want to modify the values of <strong>s</strong> so that all the letters in the string are uppercase. The snippet below does this.</p> <pre><code>#stringMethods2
+&gt;&gt;&gt; s = s.upper()
+&gt;&gt;&gt; print(s)
+HELLO WORLD!</code></pre>
+           <p>Below we have an interactive example as to how strings can be used, printed, and concatenated together.</p>
+           <iframe height="800px" width="100%" src="https://repl.it/@akrichards/Strings-and-Concatenation?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+            
+			<h2>Boolean Logic</h2>
+			<p>When a value is boolean, it essentially means that it is either True or False. While this may seem too rudimentary to be helpful, every program on your computer is, in reality, just a sequence of 1s and 0s: a prime example of the power of boolean logic. Most, if not all programming languages utilize boolean values, typically with conditionals or loops (which will be discussed later), and Python is no exception.</p>
+			<h3>The Boolean Type</h3>
+			<p>If you want to directly use the boolean type in Python, simply use the values listed below.</p>
+			<ul>
+			<li><strong >True</strong>&mdash; (the first letter is capitalized in Python)</li>
+			<li><strong >False</strong>&mdash; (the first letter is capitalized in Python)</li>
+			</ul>
+			<h3>Comparison Operators</h3>
+			<p>A comparison operator is placed between two things being compared. A comparison operator is evaluated similarly to how other mathematical operators are, except a comparison operator always results in a boolean value. The comparison operators in Python include:</p>
+			<ul>
+			<li>== (equal)</li>
+			<li>!= (not equal)</li>
+			<li><> (not equal)</li>
+			<li>< (less than)</li>
+			<li>> (greater than)</li>
+			<li><= (less than or equal to)</li>
+			<li>>= (greater than or equal to)</li>
+			</ul>
+			<p>Here is an example using a comparison operator:</p>
+			<pre><code>>>> print(1 == 2)
+False</code></code></code></code></pre>
+			<h3>Logical Operators</h3>
+			<p>Logical operators give you more flexibility when it comes to boolean values. With logical operators, you can combine multiple expressions into one. Instead of simply asking "Is x greater than 3?", you can use logical operators to ask "Is x less than three or greater than 5?" in the same line of code</p>
+			<p>Python has three logical operators (and, or, not). Their functions are described below.</p>
+			<ul>
+			<li><strong >and</strong>&mdash; If both sides evaluate to True, then this evaluates to True, otherwise, this evaluates to False.</li>
+			<li><strong >or</strong>&mdash; If one or both sides evaluate to True, then this evaluates to True, otherwise, this evaluates to False.</li>
+			<li><strong >not</strong>&mdash; Inverts the result of whatever expression this precedes. If True, then False. If False, then True.</li>
+			</ul>
+			<p>Here is an example:</p>
+			<iframe height="800" width="100%" src="https://repl.it/@akrichards/Booleans-and-Inequalities?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>			      
+        </section>
+        <section class="topic">
+            <h1>Additional Data Types</h1>
+            <p>Python, like many programming languages, has additional data types that are more suitable for sequences of information. In Python, these data types are defined as lists, tuples, and dictionaries.  In this lesson we will be focusing on the most common one, lists.</p>
+            <h2>Lists</h2>
+            <p>The List is one of the most flexible data types in Python. A list in Python is a container that holds a number of other objects in a given order. The unique aspect of lists in Python is that the data types within the list can vary from element to element. In other programming languages, such as Java, list elements all need to be the same data type. The additional flexibility makes Python a very powerful and dynamic language.</p> <pre><code> #lists
+&gt;&gt;&gt; items = [1, 2.0, "three", 'four']
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'three', 'four']</code></pre>
+            <p>Note that our list includes both an integer and a float, as well as strings that were defined with <span class="type-text">" "</span> and <span class="type-text">' '</span>. We can see that there is a lot of flexibility that comes along with lists. You can even nest lists inside of lists to create 2D and 3D arrays, but that is outside the scope of this course.</p>
+            <h3>List Indices</h3>
+            <p>Just like strings, the elements of lists are identified using indices. An element of a list can be manipulated using the index <span class="type-text">i</span>, and a range of elements using the <span class="type-text">i:j</span> notation. Just like strings, the <span class="type-text">j</span> index is non-inclusive. This is shown below.</p> <pre><code>#listsIndex1
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'three', 'four']
+&gt;&gt;&gt; print(items[0])
+1
+&gt;&gt;&gt; print(items[2])
+three
+&gt;&gt;&gt; print(items[1:3])
+[2.0, 'three']
+&gt;&gt;&gt; print(items[0:3])
+[1, 2.0, 'three']</code></pre>
+            <p>The list items contains 4 elements and is therefore indexed to 3. Remember, the j index is not included in the return value of <span class="type-text">items[i:j]</span>. It goes up until index <span class="type-text">j</span>. In our case, if we wanted to include the last element in the list we would leave the <span class="type-text">j</span> index blank to go all the way to the end of the list, or change the range to <span class="type-text">i:j+1</span>. This same syntax applies for the beginning of the list. You can leave the <span class="type-text">i</span> index blank instead of including the 0<sup>th</sup> index to return values beginning from the start of the list.</p> <pre><code>#listsIndex2
+&gt;&gt;&gt; print(items[0:4])
+[1, 2.0, 'three', 'four']
+&gt;&gt;&gt; print(items[:])
+[1, 2.0, 'three', 'four']</code></pre>
+            <h3>List Methods</h3>
+            <p>Lists can be modified by using the append and insert methods. The <span class="type-text">append</span> method will add an element to the end of the list, which will have the last index. The <span class="type-text">insert</span> method will insert an element into a given index and then push the remaining list elements over to the right.</p> <pre><code> #listsMethods1
+&gt;&gt;&gt; items.append(6)
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'three', 'four', 6]
+&gt;&gt;&gt; items.insert(4, 5.0)
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'three', 'four', 5.0, 6]</code></pre>
+            <p>Lists can also be used like a stack by using the <span class="type-text">append</span> method to push items on to the list and the <span class="type-text">pop</span> method to remove items. You can leave the argument for the pop function blank and it will remove the item at the last index of the list. Otherwise, you can define an index for the element to be removed. The function returns the value that is removed from the list, which could then be stored as a variable if desired. Type the following lines of code to see how to use the <span class="type-text">pop</span> method.</p> <pre><code>#listsMethods2
+&gt;&gt;&gt; items.pop()
+6
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'three', 'four', 5.0]
+&gt;&gt;&gt; items.pop(2)
+'three'
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'four', 5.0]</code></pre>
+            <p>The <span class="type-text">pop</span> method returns the value that is removed from the list. This returned value can be set to a variable, which applies to any method that returns a value. To demonstrate, we are going to create an integer variable that will be assigned the value of a "popped" listed element.</p> <pre><code>#listsMethods3
+&gt;&gt;&gt; z = items.pop()
+&gt;&gt;&gt; print(z)
+5.0
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'four']
+&gt;&gt;&gt; items.append(z)
+&gt;&gt;&gt; print(items)
+[1, 2.0, 'four', 5.0]</code></pre>
+            <p>Three additional methods that are useful are the <span class="type-text">max</span>, <span class="type-text">min</span>, and <span class="type-text">len</span> (length) methods. The <span class="type-text">len</span> method will return the number of elements in the list. Remember, the last indexed element in the list will be 1 less than the length of the list. The <span class="type-text">max</span> method will return the highest value within the list. Similarly, the <span class="type-text">min</span> method will return the lowest valued element in the list. <span class="highlight">The max and min functions will not work for the list named items as it contains a mix of strings and numbers</span>. Let's pop the string and add another number to items.</p> <pre><code> #listsMethods4
+&gt;&gt;&gt; items.pop(2)
+'four'
+&gt;&gt;&gt; items.append(3)
+&gt;&gt;&gt; print(items)
+[1, 2.0, 5.0, 3]
+&gt;&gt;&gt; print(len(items))
+4
+&gt;&gt;&gt; print(max(items))
+5.0
+&gt;&gt;&gt; print(min(items))
+1</code></pre>
+            <p>Here's an interactive example for you to get started on working with lists of your own.</p>
+            <iframe height="800px" width="100%" src="https://repl.it/@akrichards/Lists-Declare-Add-and-Remove?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+</section><section class="topic">
+			<h1>Control Flow</h1>
+			<div class="sidebar-note" ><p>You can have multiple layers of "blocks" i.e. "blocks within blocks" or more formally, "nested blocks". Simply increase the indentation for each subsequent layer.</p>
+			<pre><code >if (x == y):
+  while (a != b):
+    for c in d:
+      print("Nested!")</code></code></code></pre></div>
+			<p>The control flow is the order in which individual segments of code, called "blocks", are executed. In general, the interpreter reads through files, top to bottom, executing each instruction as it is read. However, a program that does only one thing would be very limited in its usefulness. Thankfully, there are ways to manipulate the control flow, so your programs don't have to be linear, but instead, can have branching paths, repeating parts, reusable segments, and more.</p>
+			<p>While most languages use braces to designate code "blocks" with indentation being optional (though very strongly recommended for readability), the Python interpreter divides "blocks" based entirely on indentation. The following sections will demonstrate how to properly use indentation along with the control flow structures that Python provides.</p>
+			
+			<h2>Conditionals</h2>
+			
+			<p>A conditional statement is a method of control flow. Conditional statements allow you to decide which parts of the code should execute based on the circumstances at the time. Perhaps you want to do something based on what the user inputs, or what time it is, or when any other condition is met. That is what conditionals are for.</p>
+			
+			<h3><strong >if</strong> Statements</h3>
+			<p>An <span class="type-text">if</span> statement checks the result of a subsequent expression and, if the result is true, executes the enclosed block of code. While not strictly necessary in Python, enclosing the conditional expression is generally considered good practice because it makes your code more readable and less prone to order-of-operations errors. An <span class="type-text">if</span> statement is similar to a person saying "If X is the case, do this." Here is an example of a simple <span class="type-text">if</span> statement.</p>
+			<pre><code>
+#Checks if x is less than 3. If so, prints: 2 &lt; 3
+x = 2
+if(x &lt; 3):
+    print("x &lt; 3")
+    </code></pre>
+			<h3><strong >elif</strong> Statements</h3>
+			<p><span class="type-text">elif</span> statements are similar to <span class="type-text">if</span> statements in that, they also check if a condition is true, but they only execute if the preceding <span class="type-text">if</span> statement evaluated to false and they must immediately follow the block of code enclosed by the preceding <span class="type-text">if</span> statement. An <span class="type-text">elif</span> statement is similar to a person saying "Otherwise if Y is the case, do this." Let's update our code to use an <span class="type-text">elif</span> statement in conjunction with an <span class="type-text">if</span> statement.</p>
+			<pre><code>#Checks if x is less than 3.
+x = 6
+if(x &lt; 3):
+    print("less")
+#If x is not less than 3, checks if x is greater than 5.
+elif(x &gt; 5):
+    print("greater")</code></pre>
+			<h3><strong >else</strong> Statements</h3>
+			<p>Finally, <span class="type-text">else</span> statements are like <span class="type-text">elif</span> statements, except they do not check a condition. Instead, an <span class="type-text">else</span> statement's enclosed code only executes if none of the other preceeding <span class="type-text">if</span>-<span class="type-text">elif</span> conditions were met. Let's try putting <span class="type-text">if</span>, <span class="type-text">elif</span>, and <span class="type-text">else</span> together.</p>
+			<pre><code>#Checks if x is less than 3.
+x = 4
+if(x &lt; 3):
+    print("less")
+#If x is not less than 3, checks if x is greater than 4.
+elif(x &gt; 5): 
+    print("greater")
+#If x is not less than 3 or greater than 5, prints "between"
+else:
+    print("between")
+</code></pre>
+<p>See how if/else functions work in practice and create your own using the window below:</p>
+<iframe height="800px" width="100%" src="https://repl.it/@akrichards/If-Else-Statements?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+			<h2>Loops</h2>
+			
+			<p>A loop is a similar structure to a conditional, except that the enclosed code is run multiple times through a process called "iteration". Loops are both a fundimental and extremely useful construct in programming.</p>
+			
+			<h3><strong >while</strong> Loops</h3>
+			<p>A <span class="type-text">while</span> loop works exactly as it sounds. It is equivalent to saying "While x is the case, do this." The syntax for a <span class="type-text">while</span> loop is similar to an <span class="type-text">if</span> statement. The enclosed code is run repeatedly until the condition just after the <span class="type-text">while</span> keyword evaluates to <span class="type-text">False</span>.</p>
+			<pre><code>x = 10
+while(x &gt; 0):
+    print("x is: " + str(x))
+    x -= 1</code></code></pre>
+	
+			<h3><strong >for</strong> Loops</h3>
+			<p><span class="type-text">for</span> loops are a little different in Python than most languages. In Python, a <span class="type-text">for</span> loop needs an "iterable" type, which is something that would be discussed in a more advanced class. Suffice it to say that lists, tuples, and any other of the sequence types previously discussed are iterable. The syntax of a <span class="type-text">for</span> loop in Python is as follows:</p>
+			<pre><code>list1 = ["This", "Is", "Iteration"]
+#for {variable name} in {iterable}
+for item in list1:
+    #item is a new variable that has the value of the current item in the list
+    print(item)</code></pre>
+    <p>See how a loop runs over a list and apply your current understanding below:</p>
+    <iframe height="800px" width="100%" src="https://repl.it/@akrichards/For-Loops?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>	
+            <h2>Functions</h2>
+			
+            <p>A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reuse. As you know, Python has a number of built-in functions like <span class="type-text">print()</span>, but you can also create your own functions which are called user-defined functions.</p>
+            <p>Python has a large number of built-in functions. You already have experience calling these functions such as <span class="type-text">print(<em>arg</em>)</span>, <span class="type-text">max(<em>arg</em>)</span>, and <span class="type-text">len(<em>arg</em>)</span>. The text <em>arg</em> is a placeholder for the function argument. An argument is a parameter that is passed to the function and is referred to a piece of data while the function executes.</p>
+            <p>You have also looked at some functions that did not require any arguments, such as <span class="type-text">.pop()</span> when the last item of a list was popped off. Functions can be defined to include arguments or not to include arguments, it just depends on how the functions are being used. For our example, we will be using two functions that include arguments.</p>
+			
+            <h3>User-defined Functions</h3>
+			
+            <p>Before we create a new function, there are rules that need to be followed for defining functions.</p>
+            <ul>
+                <li>
+                    <p>Function blocks begin with the keyword <span class="type-text">def</span> followed the the function name and parentheses. It should look like: <span class="type-text">def functionName()</span>.</p>
+                </li>
+                <li>
+                    <p>Any input parameters should be placed within these parentheses and separated by commas. You can also define parameters inside of these parentheses.</p>
+                </li>
+                <li>
+                    <p>The code block for every function starts with a colon and is indented.</p>
+                </li>
+                <li>
+                    <p>The statement <span class="type-text">return <em>expression</em></span> exits a function, optionally passing back a value to the caller. A return statement with no arguments is the same as <span class="type-text">return None</span>.</p>
+                </li>
+            </ul>
+            <h3>Functions with Default Arguments</h3>
+            <p>Function arguments must be included when you call them in the interpreter. If you forgot to include the second argument in the <span class="type-text">printBoth</span> function you would receive the following error:</p>
+            <div class="centered-image-large border"> <img src="images/default-error.png"> </div>
+            <p>This can be avoided by including default arguments in the function definition. This allows you to include less parameters in the function call and the default parameter will be used. Additionally, you can overwrite the default parameter as you would normally call the function.</p>
+            <p>Switch back to script.py in your text editor and add the next code snippet below your previous function.</p> <pre><code># printBoth with a default argument
+def printBoth2(arg1, arg2="default"):
+    print(arg1)
+    print(arg2)</code></pre>
+            <p>You will want to add the code to call the function as well.</p><pre><code># call the function, with arg2 taking its default argument
+printBoth2("Hello")<br></code></pre>
+            <p>After you type in the above code, save the file. It should look like the image below.</p>
+            <div class="centered-image-medium border"> <img src="images/sts-py.png"> </div>
+            <p><span >You can see that default arguments can be overwritten if needed. Feel free to test this out by adding a second argument to the <span class="type-text">printBoth2</span> function call. Default arguments help shorten function calls in some cases. This can be very useful with more complex functions.</span>
+            </p>
+            <p>Use this last interactive window to utilize everything you've learned so far:</p>
+            <iframe height="800px" width="100%" src="https://repl.it/@akrichards/Functions-and-Sending-Variables?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </section>    
+        <section class="topic">
+<h1>Conclusion</h1>
+            
+            <p><span style="font-size: 1em;">With that, we conclude this introductory course to programming in Python. You should now be able to read and understand basic Python code, with the ability to write scripts and functions. Please leave a review of how this lesson went at <a href="wisc.edu/sts/today">this link</a>. Do check out the Python help page at </span><a href="https://www.python.org/about/help/" style="font-size: 1em;">https://www.python.org/about/help/</a><span style="font-size: 1em;"> and the Lynda.com page at </span><a href="https://www.lynda.com/Python-training-tutorials/415-0.html" style="font-size: 1em;">https://www.lynda.com/Python-training-tutorials/415-0.html</a><span style="font-size: 1em;"> for additional resources. A quick Google search should help with any trouble you encounter. STS has free consultation services that can help a lot as well.</span>
+                <br> </p>
+            <p><span style="font-size: 1em;">Feel free to also take our Python 2 class to further hone your skills, and learn about advanced Python topics.</span></p>
+        </section>
+        <!-- END MAIN CONTENT -->
+    </body>
